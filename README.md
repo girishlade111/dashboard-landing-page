@@ -1,30 +1,73 @@
-# Modern landing page
+# FlowAI — Dashboard Landing Page
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A bright, modern marketing landing page for **FlowAI**, an AI-powered project-planning product ("Smarter Project Planning — Keep Your Team Aligned in Minutes"). Includes a gradient hero with dashboard preview mockup, features, how-it-works, and pricing sections, plus client-side login/signup pages.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/gileb64375-5584s-projects/v0-modern-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/zdtqddiPkvr)
+> **Built by Girish Lade** — more free tools at [ladestack.in](https://ladestack.in)
 
-## Overview
+## Features
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+- **Hero** — gradient + grid backdrop, headline, CTA, and dashboard preview mockup
+- **Features section** — product capability cards with icons
+- **How It Works** — step-by-step walkthrough section
+- **Pricing section** — plan tiers and pricing cards
+- **Login / Signup pages** — client-side forms with toast feedback (demo only, no backend)
+- **Sticky navbar** — navigation with theme provider
+- **Light, playful design** — rose/orange gradient palette, rounded cards
+- **Responsive** — mobile-first Tailwind layouts
+
+## Tech Stack
+
+- **Next.js 15** (App Router, static export) + **React 19** + **TypeScript**
+- **Tailwind CSS** + **shadcn/ui** (Radix UI primitives)
+- **next-themes** for theming
+- **lucide-react** icons, **@vercel/analytics**
+
+## Quick Start
+
+```bash
+# install dependencies
+npm install
+
+# run the dev server
+npm run dev
+# open http://localhost:3000
+
+# production build (static export to ./out)
+npm run build
+
+# serve the static build
+npx serve out
+```
+
+## Project Structure
+
+```
+app/                        # Next.js App Router
+  page.tsx                  # Landing page (hero + sections)
+  login/page.tsx            # Client-side login (demo)
+  signup/page.tsx           # Client-side signup (demo)
+  layout.tsx / globals.css
+components/
+  flowai/
+    navbar.tsx / hero.tsx
+    dashboard-preview.tsx
+    sections/               # features, how-it-works, pricing
+  ui/                       # shadcn/ui primitives
+  theme-provider.tsx
+hooks/use-toast.ts          # Toast hook
+lib/utils.ts
+public/                     # Static assets
+styles/
+```
+
+## Environment Variables
+
+None — pure static landing page; the login/signup forms are client-side demos with no backend or secrets.
 
 ## Deployment
 
-Your project is live at:
+Static site. Build with `npm run build` (configured with `output: 'export'`, images unoptimized) and deploy the `out/` directory to any static host — GitHub Pages, Cloudflare Pages, Netlify, or Vercel.
 
-**[https://vercel.com/gileb64375-5584s-projects/v0-modern-landing-page](https://vercel.com/gileb64375-5584s-projects/v0-modern-landing-page)**
+## License
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/projects/zdtqddiPkvr](https://v0.app/chat/projects/zdtqddiPkvr)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Free to use and modify.
